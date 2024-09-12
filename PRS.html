@@ -6,6 +6,47 @@
     <title>Paper Rock Scissors</title>
 </head>
 <body>
-    
+ <script>
+    let computer = ["paper", "rock", "scissors"];
+    let person = "";
+    let message="";
+
+    while (true){
+        person=prompt("please enter your choise: paper, rock, or scissors").toLowerCase();
+        if (person == "paper" || person == "rock" || person == "scissors"){
+            break
+        }
+    }
+
+    function chooser(computer){
+        return computer[(Math.floor(Math.random()*computer.length))]
+    }
+
+    let opponent= chooser(computer)
+
+    if (person=="rock" && opponent=="rock"){
+        message="It's a tie!"
+    }else if (person=="scissors" && opponent=="rock"){
+        message="the computer wins! rock beats scissors!"
+    }else if (person=="paper" && opponent=="rock"){
+        message="you win! paper beats rock!"
+    }else if (person=="rock" && opponent=="scissors"){
+        message="you win! rock beats scissors!"
+    }else if (person=="scissors" && opponent=="scissors"){
+        message="It's a tie!"
+    }else if (person=="paper" && opponent=="scissors"){
+        message="the computer wins! scissors beats paper!"
+    }else if (person=="rock" && opponent=="paper"){
+        message="the computer wins! paper beats rock!"
+    }else if (person=="scissors" && opponent=="paper"){
+        message="you win! scissors beats paper!"
+    }else if (person=="paper" && opponent=="paper"){
+        message="It's a tie!"
+    }
+
+    console.log(message)
+
+
+ </script>
 </body>
 </html>
