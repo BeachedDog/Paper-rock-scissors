@@ -1,0 +1,58 @@
+.head{
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+    background:radial-gradient(rgb(13, 225, 190), transparent,rgb(30, 66, 199),transparent,  rgb(13, 225, 190), transparent) ;
+    /* mix-blend-mode:luminosity; */
+    width: 90%;
+    margin: auto;
+    height: 17vh;
+    overflow: hidden;
+    text-wrap: wrap;
+    border: 2px solid rgb(113, 43, 226);
+    border-radius: 10px;
+}
+
+h2{
+    flex-shrink: 2;
+    font-size: 4vh;
+    margin:auto;
+    color:rgb(14, 4, 3) ;
+    text-shadow: 2px 2px 2px rgb(21, 182, 222) ;
+}
+
+img{
+    width:100px;
+    mix-blend-mode:luminosity
+}
+
+button{
+    background:radial-gradient(aqua, transparent, blue);
+    color: rgb(5, 1, 4);
+    border-radius: 8px;
+    text-shadow: 2px 2px 2px rgb(21, 182, 222) ;
+    box-shadow: 2px 2px 3px rgb(56, 44, 44);
+}
+
+button:hover{
+    opacity:75%
+}
+
+button:active{
+    opacity:50%
+}
+
+.directions{
+    background-color: rgb(254, 246, 236);
+    text-align: center;
+    font-size: 12px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:90%;
+    margin:0 auto
+}
+
+.directions p{
+    width:70%
+}
