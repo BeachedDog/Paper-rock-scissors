@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=initial-scale=1.0">
     <title>Paper Rock Scissors</title>
     <link rel="stylesheet" href="PRS.css">
-    <script href="PRS.js" defer></script>
+    <script src="PRS.js" defer></script>
 </head>
 <body>
     <header class="head">
@@ -19,19 +19,26 @@
             Most of the CSS attributes used are just for learning experience, 
             and not for overall asthetic pleasure. 
         </p>
-        <p>Directions: Click one of the three buttons (paper, rock, or scissors). 
+        <p>Direections: Click one of the three buttons (paper, rock, or scissors). 
             This will be your choice. The computer will also make the same choice. 
             Whoever wins will receive a point. 
             The first player to reach 5 points will win the game.
         </p>
     </div>
-    <div class="game container">
+    <div class="game-container">
+         <div class="player-pick">        
+            <img class="photo-rock" src="photos/rock.jpg">
+            <img class="photo-paper" src="photos/paper.jpg"> 
+            <img class="photo-scissors" src="photos/scissors.jpg">  
+        </div>
         <div class="buttons">
             <button class="paper">Paper</button>
             <button class="rock">Rock</button>
             <button class="scissors">Scissors</button>
         </div>
     </div>
- </script>
+    <div class="score">
+        
+    </div>
 </body>
 </html>

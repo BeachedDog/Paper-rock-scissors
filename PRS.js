@@ -1,52 +1,104 @@
+const paper = document.querySelector(".paper");
+const rock = document.querySelector(".rock");
+const scissors = document. querySelector(".scissors");
 
-    let computer = ["paper", "rock", "scissors"];
-    let person = "";
-    let message="";
-    let personScore=0;
-    let computerScore=0;
+const score = document.querySelector(".score");
 
-    function chooser(computer){
-        return computer[(Math.floor(Math.random()*computer.length))]
+const photoPaper = document.querySelector(".photo-paper");
+const photoRock = document.querySelector(".photo-rock");
+const photoScissors = document.querySelector(".photo-scissors");
+
+const text = document.createElement('p');
+
+score.appendChild(text)
+
+let choice= "";
+
+let humanScore = 0;
+let computerScore = 0;
+
+function game(choice){
+    let computerOptions = ["paper", "rock", "scissors"];
+    let computerChoice=""
+    computerChoice= computerOptions[Math.floor(Math.random() * 3)]
+        if(choice=="paper" && computerChoice=="paper"){
+            return(text.textContent = `it's a tie! the score is currently,
+             You:${humanScore}  Computer:${computerScore}`)
+        }else if(choice=="rock" && computerChoice=="rock"){
+            return(text.textContent = `it's a tie! the score is currently,
+             You:${humanScore}  Computer:${computerScore}`)
+        }else if(choice=="sissors" && computerChoice=="scissors"){
+            return (text.textContent = `it's a tie! the score is currently,
+             You:${humanScore}  Computer:${computerScore}`)
+        }else if(choice=="paper" && computerChoice=="rock"){
+            humanScore++
+            return (text.textContent = `You win! the score is currently,
+             You:${humanScore}  Computer:${computerScore}`)
+        }else if(choice=="rock" && computerChoice=="scissors"){
+            humanScore++
+            return(text.textContent = `You win! the score is currently,
+             You:${humanScore}  Computer:${computerScore}`)
+        }else if(choice=="scissors" && computerChoice=="paper"){
+            humanScore++
+            return(text.textContent = `You win! the score is currently,
+             You:${humanScore}  Computer:${computerScore}`)
+        }else if (choice=="paper" && computerChoice=="scissors"){
+            computerScore++
+            return (text.textContent = `Computer wins! the score is currently,
+             You:${humanScore}  Computer:${computerScore}`)
+        }else if (choice=="scissors" && computerChoice=="rock"){
+            computerScore++
+            return(text.textContent = `Computer wins! the score is currently,
+             You:${humanScore}  Computer:${computerScore}`)
+        } else if (choice=="rock" && computerChoice=="paper"){
+            computerScore++
+            return (text.textContent = `Computer wins! the score is currently,
+             You:${humanScore}  Computer:${computerScore}`)
+        }
     }
 
-    function playGame(){
-    for (i=0; i<5; i++){
-        
-        let opponent= chooser(computer);
 
-        while (true){
-        person=prompt("please enter your choise: paper, rock, or scissors").toLowerCase();
-        if (person == "paper" || person == "rock" || person == "scissors"){
-            break
-            }
-        }
-
-        if (person=="rock" && opponent=="rock"){
-            message="It's a tie!"
-        }else if (person=="scissors" && opponent=="rock"){
-            message="the computer wins! rock beats scissors!"
-            computerScore+=1
-        }else if (person=="paper" && opponent=="rock"){
-            message="you win! paper beats rock!"
-            personScore+=1
-        }else if (person=="rock" && opponent=="scissors"){
-            message="you win! rock beats scissors!"
-            personScore+=1
-        }else if (person=="scissors" && opponent=="scissors"){
-            message="It's a tie!"
-        }else if (person=="paper" && opponent=="scissors"){
-            message="the computer wins! scissors beats paper!"
-            computerScore+=1
-        }else if (person=="rock" && opponent=="paper"){
-            message="the computer wins! paper beats rock!"
-            computerScore+=1
-        }else if (person=="scissors" && opponent=="paper"){
-            message="you win! scissors beats paper!"
-            personScore+=1
-        }else if (person=="paper" && opponent=="paper"){
-            message="It's a tie!"
-        }
-        console.log(message, `person score:paper ${personScore}`, `computer score: ${computerScore}`)
-    }
+function ending(){
+    return (text.textContent =`Thank you for playing! Final score, 
+        You:${humanScore}  Computer:${computerScore}`)
 }
-    playGame()
+
+function zero(){
+    humanScore=0
+    computerScore=0
+}
+
+paper.addEventListener("click", () => {
+    photoPaper.style.display= "block";
+    photoRock.style.display= "none";
+    photoScissors.style.display= "none";
+    choice="paper";
+    if (humanScore<5 && computerScore<5){
+        game(choice);
+    }else {ending();
+    zero()};
+})
+
+rock.addEventListener("click", () => {
+    photoPaper.style.display= "none";
+    photoRock.style.display= "block";
+    photoScissors.style.display= "none";
+    choice="rock";
+    if (humanScore<5 && computerScore<5){
+        game(choice);
+    }else {ending();
+    zero()};
+})
+
+scissors.addEventListener("click", () => {
+    photoPaper.style.display= "none";
+    photoRock.style.display= "none";
+    photoScissors.style.display= "block";
+    choice="scissors";
+    if (humanScore<5 && computerScore<5){
+        game(choice);
+    }else {ending();
+    zero()};
+})
+
+
